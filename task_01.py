@@ -8,6 +8,8 @@ contour_path = './Contours/'
 paths = sorted(glob.glob(basepath))
 myFile = open('lung_volumes.csv', 'w')
 lung_areas = []
+make_dirs(outpath)
+make_dirs(contour_path)
 
 for c, exam_path in enumerate(paths):
     img_name = exam_path.split("/")[-1].split('.nii')[0]

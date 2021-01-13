@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+ctenvNew/
+.idea/.gitignore
+.idea/ct-intensity-segmentation.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/other.xml
+.idea/vcs.xml
+Contours/
+Images/
+LUNGS/
+Vessel_overlayed/
+Vessels/
+__pycache__/
+lung_volumes.csv
+vessel_volumes.csv

@@ -1,9 +1,24 @@
+import os
+import shutil
+
 import matplotlib.pyplot as plt
 import nibabel as nib
 import numpy as np
+from PIL import Image, ImageDraw
 from scipy.spatial import ConvexHull
 from skimage import measure
-from PIL import Image, ImageDraw
+
+
+def make_dirs(path):
+    """
+    Creates the directory as specified from the path
+    in case it exists it deletes it
+    """
+    if os.path.exists(path):
+        shutil.rmtree(path)
+        os.mkdir(path)
+    else:
+        os.makedirs(path)
 
 
 def create_mask_from_polygon(image, contours):
@@ -105,7 +120,7 @@ def show_contour(image, contours, name=None, save=False):
 
     ax.set_xticks([])
     ax.set_yticks([])
-    
+
     if save:
         plt.savefig(name)
         plt.close(fig)
@@ -121,10 +136,12 @@ def show_slice(slice):
     plt.figure()
     plt.imshow(slice.T, cmap="gray", origin="lower")
 
-def overlay_plot(im,mask):
+
+def overlay_plot(im, mask):
     plt.figure()
     plt.imshow(im.T, 'gray', interpolation='none')
     plt.imshow(mask.T, 'jet', interpolation='none', alpha=0.5)
+
 
 def save_nifty(img_np, name, affine):
     """

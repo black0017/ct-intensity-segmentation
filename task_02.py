@@ -7,11 +7,16 @@ from utils import *
 
 basepath = './Images/slice*.nii.gz'
 vessels = './Vessels/'
+figures = './Figures/'
 overlay_path = './Vessel_overlayed/'
 paths = sorted(glob.glob(basepath))
 myFile = open('vessel_volumes.csv', 'w')
 lung_areas_csv = []
 ratios = []
+
+make_dirs(vessels)
+make_dirs(overlay_path)
+make_dirs(figures)
 
 
 def split_array_coords(array, indx=0, indy=1):
@@ -52,6 +57,7 @@ for c, exam_path in enumerate(paths):
     vessels_only = create_vessel_mask(lung_mask, ct_numpy, denoise=True)
 
     overlay_plot(ct_numpy, vessels_only)
+    plt.title('Overlayed plot')
     plt.savefig(overlay_name)
     plt.close()
 
