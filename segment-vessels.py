@@ -1,8 +1,6 @@
 import csv
 import glob
 
-from sklearn.cluster import KMeans
-
 from utils import *
 
 basepath = './Images/slice*.nii.gz'
