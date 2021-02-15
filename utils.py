@@ -48,7 +48,7 @@ def create_mask_from_polygon(image, contours):
     return lung_mask.T  # transpose it to be aligned with the image dims
 
 
-def intensity_seg(ct_numpy, min, max):
+def intensity_seg(ct_numpy, min=-1000, max=-300):
     clipped = clip_ct(ct_numpy, min, max)
     return measure.find_contours(clipped, 0.95)
 

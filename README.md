@@ -1,5 +1,7 @@
 # CT intensity-based lung and vessel segmentation
 
+To understand the codebase, read the related article at [AI Summer](https://theaisummer.com/)
+
 
 ### Instructions to reproduce my results
 
