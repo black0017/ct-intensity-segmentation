@@ -2,6 +2,7 @@
 
 To understand the codebase, read the related article at [AI Summer](https://theaisummer.com/medical-image-python/)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kUOkey3CjWoebA5tVu2oazydFKpJKhrU?usp=sharing)
 
 ### Instructions to reproduce my results
 
